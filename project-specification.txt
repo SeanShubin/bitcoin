@@ -1,0 +1,37 @@
+{
+  prefix [com seanshubin]
+  name [bitcoin]
+  description 'Bitcoin'
+  version 0.1.0
+  language kotlin
+  developer {
+    name 'Sean Shubin'
+    githubName SeanShubin
+    mavenUserName SeanShubin
+    organization 'Sean Shubin'
+    url http://seanshubin.com/
+  }
+  dependencies {
+    stdlib {
+      group    org.jetbrains.kotlin
+      artifact kotlin-stdlib-jdk8
+    }
+    test {
+      group    org.jetbrains.kotlin
+      artifact kotlin-test-junit
+      scope    test
+    }
+  }
+  global [ stdlib test ]
+  modules {
+    console        [ domain ]
+    domain         []
+  }
+  detangler [console]
+  consoleEntryPoint {
+    console com.seanshubin.bitcoin.EntryPoint
+  }
+  javaVersion 12
+}
+
+
